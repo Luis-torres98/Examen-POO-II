@@ -1,0 +1,172 @@
+﻿
+/*Estilos Generales*/
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0 auto;
+    
+    width: 100%;
+    padding: 0;
+}
+
+.contenedor{
+    width:920px;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+#banner {
+    width: 100%;
+    height: 250px;
+}
+
+
+h2, h4 {
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+}
+
+h3 {
+    font-weight: bold;
+    color: slategrey;
+    margin-left: 1em;
+}
+.menu {
+    position: absolute;
+   
+    width: 100%;
+    height: 6.5%;
+    display: block;
+    color: white;
+    background-color: #333;
+    
+}
+
+    .menu ul {
+        display: flex;
+        margin: auto;
+        justify-content: center;
+    }
+
+    .menu li {
+        list-style: none;
+        padding: 10px 20px;
+        color:white;
+    }
+
+        .menu li:hover {
+            background-color: brown;
+            cursor: pointer;
+        }
+
+    .menu ul li ul {
+        flex-direction: column;
+        position: absolute;
+        background-color: black;
+        margin-top: 15px;
+        transform: rotateY(240deg) scale(0);
+        transition: all 1s;
+    }
+
+    .menu ul li:hover > ul {
+        transform: rotateY(0deg) scale(1);
+        transition: all 1s;
+        background-color: #9c2a2a;
+    }
+
+a {
+    color: black;
+}
+
+
+
+    a:link, a:hover {
+        text-decoration: none;
+        color: black ;
+    }
+
+    a:visited {
+        text-decoration: none;
+        color: white;
+    }
+
+
+/*Imagenes centrales*/
+#imagen {
+    width: 280px;
+    height: 250px;
+    padding: 10px;
+    border: 1px solid green;
+    display: block;
+    margin: auto;
+}
+
+#imgIndex {
+    width: 920px;
+    background-color: gainsboro;
+    padding: 25px 0;
+}
+
+#foto {
+    width: 100% ;
+    margin: 0 auto;
+    justify-content: center;
+    text-align: center;
+}
+
+th {
+    height: 30px;
+    border: 1px solid #eee;
+    padding: 5px;
+    background-color: cadetblue;
+    color: black;
+    text-align: left;
+}
+
+td {
+    padding: 5px 5px;
+    border: 1px solid #eee;
+    color:black;
+    text-align: center;
+}
+
+td a{
+    color: black;
+}
+
+
+table {
+    border-collapse: collapse;
+    width: 90%;
+    margin: auto;
+}
+
+.serv {
+    list-style: none;
+    padding: 5px;
+}
+
+#imgServ {
+    width: 314px;
+    height: auto;
+}
+
+.imgCenter {
+    display: flex;
+    justify-content: space-between;
+}
+
+#pie {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 6px;
+    margin-top: 20px;
+    
+    bottom: 0;
+    
+}

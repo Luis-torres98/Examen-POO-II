@@ -1,0 +1,51 @@
+﻿@model IEnumerable<POOII_CL1_RAMIREZ_MORANTE.Models.Servicio>
+@using POOII_CL1_RAMIREZ_MORANTE.Models
+@{
+    ViewBag.Title = "ListadoServicios";
+    Layout = "~/Views/Shared/_LayoutPrincipal.cshtml";
+    var misServicios = (List<Servicio>)ViewData["datos"];
+}
+
+<h2>**INTRANET**</h2>
+<h3>NUESTROS SERVICIOS</h3>
+<hr>
+<section>
+    <table class="table">
+        <tr>
+            <th>REPRESENTANTE</th>
+            <th>CIUDAD</th>
+            <th>TELÉFONO</th>
+            <th>CONTACTO</th>
+        </tr>
+
+    @foreach (var item in misServicios){
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.representante)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ciudad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.telefono)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.contacto)
+        </td>
+    </tr>
+    }
+    </table>
+
+</section>
+<h3>GALERIA</h3>
+<hr>
+<section>
+    <figure class="imgCenter">
+        @foreach (String f in (List<String>)ViewData["fotos"])
+        {
+            <img id="imgServ" src="@Url.Content(string.Format("~/Imagenes/{0}.jpg", f))" />
+        }
+    </figure>
+
+</section>
+

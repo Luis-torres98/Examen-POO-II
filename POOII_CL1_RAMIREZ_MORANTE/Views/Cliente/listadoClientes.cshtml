@@ -1,0 +1,57 @@
+﻿@model IEnumerable<POOII_CL1_RAMIREZ_MORANTE.Controllers.Cliente>
+@using POOII_CL1_RAMIREZ_MORANTE.Controllers
+@{
+    ViewBag.Title = "listadoClientes";
+    Layout = "~/Views/Shared/_LayoutPrincipal.cshtml";
+    var misClientes = (List<Cliente>)ViewData["info"];
+}
+
+<h2>LISTADO DE CLIENTES</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Codigo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombres)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefonos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoCliente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.correo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in misClientes) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Codigo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombres)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telefonos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoCliente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.correo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "modificarCliente", new {  id=item.Codigo }, new { @class="btn btn-danger"}) 
+            @Html.ActionLink("Details", "detalleCliente", new { id=item.Codigo  }, new { @class = "btn btn-primary" }) 
+            @Html.ActionLink("Delete", "eliminarCliente", new {  id=item.Codigo  }, new { @class = "btn btn-success" })
+        </td>
+    </tr>
+}
+
+</table>

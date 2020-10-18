@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body style="padding: 0">
+    <header>
+        <figure >
+            <img id="banner" src="~/Imagenes/banner.jpg" />
+        </figure>
+
+        <nav class="menu">
+            <ul>
+                <li>@Html.ActionLink("PRINCIPAL", "Index", "Restaurant")</li>
+                <li>@Html.ActionLink("SERVICIOS", "ListadoServicios", "Restaurant")</li>
+                <li>
+                    CLIENTES
+                    <ul>
+                        <li>@Html.ActionLink("LISTADO DE CLIENTES", "listadoClientes", "Cliente")</li>
+                        <li>@Html.ActionLink("NUEVO REGISTRO DE CLIENTES", "nuevoCliente", "Cliente")</li>
+                    </ul>
+                </li>
+                <li>
+                    AUSPICIADORES
+
+                </li>
+
+                <li>
+                    REDES SOCIALES
+
+                </li>
+
+                <li>
+                    CAMPAÑA
+
+                </li>
+            </ul>
+        </nav>
+
+
+    </header>
+
+    <div class="contenedor">
+        @RenderBody()
+    </div>
+    
+    <footer id="pie">
+        <h6>
+            Todos los derechos reservados@@ @DateTime.Now.Year <br /> Juan Jesus Ramirez Morante <br /> Luis Eduardo Torres Figueroa
+            <br /> Harold Donald Mallqui Valdivia <br />
+             Pecho Lujan<br />
+        </h6>
+    </footer>
+
+</body>
+</html>
